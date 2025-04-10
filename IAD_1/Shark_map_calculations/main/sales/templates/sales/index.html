@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru"/>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css"/>
+    <script src="{% static 'js/jquery-3.6.1.min.js' %}" defer></script>
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js" defer></script>
+    <title>SharkMap</title>
+  </head>
+  <body>
+    <section class="content" id="pageWrapper">
+      <section class="layerGrab">
+        <div class="layer img1"></div>
+        <div class="layer intro">
+          <div>
+            <h1 class="title">Заголовок первый</h1>
+            <h1>Какой-то текст достаточно длинный текст</h1>
+          </div>
+        </div>
+        <div class="layer logo"></div>
+        <div class="customShapeDividerBottomTitle">
+          <svg viewBox="0 0 1500 200">
+              <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z"/>
+          </svg>
+        </div>
+      </section>
+      <section class="layerGrab mainContent">
+        <div class="divider"></div>
+        <div class="customShapeDividerTop">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shapeFill"></path>
+          </svg>
+        </div>
+        <div class="arrow">
+          <a href="#pageBottom">
+            <span></span>
+          </a>
+        </div>
+        <form action="upload/" method="POST" class="dropzone" id="my-awesome-dropzone">
+          <div class="fallback">
+            <input type="file" name="file" multiple/>
+          </div>
+        </form>
+        <nav class="slider">
+          <div class="navBarActivateBtn"><span></span></div>
+          <div class="container">
+            <form class="form" id="login">
+                <h1 class="formTitle">Login</h1>
+                <div class="formMessage formMessage--error"></div>
+                <div class="formInput-group">
+                    <input type="text" class="formInput" autofocus placeholder="Username or email">
+                    <div class="formInput-error-message"></div>
+                </div>
+                <div class="formInput-group">
+                    <input type="password" class="formInput" autofocus placeholder="Password">
+                    <div class="formInput-error-message"></div>
+                </div>
+                <button class="formBtn" type="submit">Continue</button>
+                <p class="formText">
+                    <a class="formLink" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+                </p>
+            </form>
+            <form class="form form--hidden" id="createAccount">
+                <h1 class="form__title">Create Account</h1>
+                <div class="formMessage formMessage--error"></div>
+                <div class="form__input-group">
+                    <input type="text" id="signupUsername" class="formInput" autofocus placeholder="Username">
+                    <div class="formInput-error-message"></div>
+                </div>
+                <div class="formInput-group">
+                    <input type="text" class="formInput" autofocus placeholder="Email Address">
+                    <div class="formInput-error-message"></div>
+                </div>
+                <div class="formInput-group">
+                    <input type="password" class="formInput" autofocus placeholder="Password">
+                    <div class="formInput-error-message"></div>
+                </div>
+                <div class="formInput-group">
+                    <input type="password" class="formInput" autofocus placeholder="Confirm password">
+                    <div class="formInput-error-message"></div>
+                </div>
+                <button class="formBtn" type="submit">Continue</button>
+                <p class="formText">
+                    <a class="formLink" href="./" id="linkLogin">Already have an account? Sign in</a>
+                </p>
+            </form>
+          </div>
+        </nav>
+        <div class="customShapeDividerBottom" id="pageBottom">  
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shapeFill"></path>
+          </svg>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #202020, #111119);
+}
+.rain {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+.drop {
+    position: absolute;
+    bottom: 100%;
+    width: 15px;
+    height: 120px;
+    pointer-events: none;
+    animation: drop 0.5s linear infinite;
+}
+@keyframes drop {
+    0% {
+        transform: translateY(0vh);
+    }
+    75% {
+        transform: translateY(90vh);
+    }
+    100% {
+        transform: translateY(90vh);
+    }
+}
+.stem {
+    width: 1px;
+    height: 60%;
+    margin-left: 7px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+    animation: stem 0.5s linear infinite;
+}
+@keyframes stem {
+    0% {
+        opacity: 1;
+    }
+    65% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+    opacity: 0;
+    }
+}
+.splat {
+    width: 15px;
+    height: 10px;
+    border-top: 2px dotted rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(0);
+    animation: splat 0.5s linear infinite;
+    display: none;
+}
+body.splat-toggle .splat {
+    display: block;
+}
+@keyframes splat {
+    0% {
+    opacity: 1;
+    transform: scale(0);
+    }
+    80% {
+    opacity: 1;
+    transform: scale(0);
+    }
+    90% {
+    opacity: 0.5;
+    transform: scale(1);
+    }
+    100% {
+    opacity: 0;
+    transform: scale(1.5);
+    }
+}
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to top, #5173bb 20%, #27273c 80%);
+}
+.bgTop {
+    z-index: 3;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 2;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 1;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+.mainForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: calc(50% - 260px);
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 500px;
+    background-color: rgba(20, 20, 20, 0.5);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    border-radius: 20px;
+    z-index: 5;
+}
+.mainForm h1 {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    line-height: 42px;
+    outline: none;
+    border: none;
+    text-align: center;
+}
+.mainForm form {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-self: center;
+    width: 80%;
+}
+.mainForm input {
+    font-family: 'Poppins',sans-serif;
+    color: #000;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    transition: .2s;
+}
+.mainForm input:hover {
+    background-color: #e2e2e2;
+    transition: .2s;
+}
+.mainForm label {
+    display: block;
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.mainForm button {
+    margin-top: 40px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .25s;
+}
+.mainForm button:hover {
+    background-color: #d8d8d8;
+    transition: .25s;
+    
+}
+.codeForm {
+    height: 460px !important;
+    top: calc(50% - 230px);
+}
